@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ------------------------------------------------------------------ */
+/* Double M Productions — dark theme, warm amber accent.              */
+/* Palette mapped to Tailwind v4 design tokens (see CLAUDE.md).       */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-background: #0a0a0b; /* page background (near-black) */
+  --color-surface: #161618; /* cards, panels */
+  --color-surface-raised: #1c1c1f; /* gradient end for surfaces */
+  --color-border: #2a2a2d; /* default divider / card border */
+
+  --color-foreground: #fafafa; /* primary text */
+  --color-muted: #a1a1aa; /* body / secondary text */
+  --color-faint: #52525b; /* de-emphasized labels */
+
+  --color-brand: #f4a62a; /* amber accent */
+  --color-brand-deep: #e8941a; /* hover / gradient end of amber */
+
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --spacing-18: 4.5rem; /* navbar height */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Amber focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
